@@ -3,10 +3,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTestSetCurrentVolume {
+    Radio cond = new Radio();
 
     @Test
     void setCurrentVolumeM1() {
-        Radio cond = new Radio();
+
         cond.setCurrentVolume(-1);
 
         int expected = 0;
@@ -17,7 +18,7 @@ class RadioTestSetCurrentVolume {
 
     @Test
     void setCurrentVolume0() {
-        Radio cond = new Radio();
+
         cond.setCurrentVolume(0);
 
         int expected = 0;
@@ -28,7 +29,7 @@ class RadioTestSetCurrentVolume {
 
     @Test
     void setCurrentVolume1() {
-        Radio cond = new Radio();
+
         cond.setCurrentVolume(1);
 
         int expected = 1;
@@ -38,33 +39,33 @@ class RadioTestSetCurrentVolume {
     }
 
     @Test
-    void setCurrentVolume9() {
-        Radio cond = new Radio();
-        cond.setCurrentVolume(9);
+    void setCurrentVolume99() {
 
-        int expected = 9;
+        cond.setCurrentVolume(99);
+
+        int expected = 99;
         int actual = cond.getCurrentVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void setCurrentVolume10() {
-        Radio cond = new Radio();
-        cond.setCurrentVolume(10);
+    void setCurrentVolume100() {
 
-        int expected = 10;
+        cond.setCurrentVolume(100);
+
+        int expected = 100;
         int actual = cond.getCurrentVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void setCurrentVolume11() {
-        Radio cond = new Radio();
-        cond.setCurrentVolume(11);
+    void setCurrentVolume101() {
 
-        int expected = 10;
+        cond.setCurrentVolume(101);
+
+        int expected = 100;
         int actual = cond.getCurrentVolume();
 
         assertEquals(expected, actual);
