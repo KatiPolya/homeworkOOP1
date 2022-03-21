@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RadioTestSetCurrentVolume {
+class RadioSetCurrentVolumeTest {
     Radio cond = new Radio();
 
     @Test

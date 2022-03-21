@@ -2,71 +2,71 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RadioTestIncreaseVolume {
+class RadioDecreaseVolumeTest {
     Radio cond = new Radio();
 
     @Test
-    void increaseVolumeM1() {
+    void decreaseVolumeM1() {
 
         cond.setCurrentVolume(-1);
 
-        int expected = 1;
-        int actual = cond.increaseVolume();
+        int expected = 0;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume0() {
+    void decreaseVolume0() {
 
         cond.setCurrentVolume(0);
 
-        int expected = 1;
-        int actual = cond.increaseVolume();
+        int expected = 0;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume1() {
+    void decreaseVolume1() {
 
         cond.setCurrentVolume(1);
 
-        int expected = 2;
-        int actual = cond.increaseVolume();
+        int expected = 0;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume99() {
+    void decreaseVolume99() {
 
         cond.setCurrentVolume(99);
 
-        int expected = 100;
-        int actual = cond.increaseVolume();
+        int expected = 98;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume100() {
+    void decreaseVolume100() {
 
         cond.setCurrentVolume(100);
 
-        int expected = 100;
-        int actual = cond.increaseVolume();
+        int expected = 99;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume101() {
+    void decreaseVolume101() {
 
         cond.setCurrentVolume(101);
 
-        int expected = 100;
-        int actual = cond.increaseVolume();
+        int expected = 99;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }

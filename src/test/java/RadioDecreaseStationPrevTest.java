@@ -2,67 +2,66 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RadioTestIncreaseStationNext {
+class RadioDecreaseStationPrevTest {
     Radio cond = new Radio(9);
 
     @Test
-    void increaseStationM1() {
+    void decreaseStationM1() {
 
         cond.setCurrentStation(-1);
-        int expected = 1;
-        int actual = cond.increaseStation();
+        int expected = 9;
+        int actual = cond.decreaseStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseStation0() {
+    void decreaseStation0() {
 
         cond.setCurrentStation(0);
-        int expected = 1;
-        int actual = cond.increaseStation();
+        int expected = 9;
+        int actual = cond.decreaseStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseStation1() {
+    void decreaseStation1() {
 
         cond.setCurrentStation(1);
-        int expected = 2;
-        int actual = cond.increaseStation();
+        int expected = 0;
+        int actual = cond.decreaseStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseStation8() {
+    void decreaseStation8() {
 
         cond.setCurrentStation(8);
-        int expected = 9;
-        int actual = cond.increaseStation();
+        int expected = 7;
+        int actual = cond.decreaseStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseStation9() {
+    void decreaseStation9() {
 
         cond.setCurrentStation(9);
-        int expected = 0;
-        int actual = cond.increaseStation();
+        int expected = 8;
+        int actual = cond.decreaseStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseStation10() {
+    void decreaseStation10() {
 
         cond.setCurrentStation(10);
-        int expected = 1;
-        int actual = cond.increaseStation();
+        int expected = 9;
+        int actual = cond.decreaseStation();
 
         assertEquals(expected, actual);
     }
-
 }
