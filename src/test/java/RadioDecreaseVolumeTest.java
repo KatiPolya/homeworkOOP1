@@ -2,70 +2,70 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RadioTestIncreaseVolume {
+class RadioDecreaseVolumeTest {
 
     @Test
-    void increaseVolumeM1() {
+    void decreaseVolumeM1() {
         Radio cond = new Radio();
         cond.setCurrentVolume(-1);
 
-        int expected = 1;
-        int actual = cond.increaseVolume();
+        int expected = 0;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume0() {
+    void decreaseVolume0() {
         Radio cond = new Radio();
         cond.setCurrentVolume(0);
 
-        int expected = 1;
-        int actual = cond.increaseVolume();
+        int expected = 0;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume1() {
+    void decreaseVolume1() {
         Radio cond = new Radio();
         cond.setCurrentVolume(1);
 
-        int expected = 2;
-        int actual = cond.increaseVolume();
+        int expected = 0;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume9() {
+    void decreaseVolume9() {
         Radio cond = new Radio();
         cond.setCurrentVolume(9);
 
-        int expected = 10;
-        int actual = cond.increaseVolume();
+        int expected = 8;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume10() {
+    void decreaseVolume10() {
         Radio cond = new Radio();
         cond.setCurrentVolume(10);
 
-        int expected = 10;
-        int actual = cond.increaseVolume();
+        int expected = 9;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolume11() {
+    void decreaseVolume11() {
         Radio cond = new Radio();
         cond.setCurrentVolume(11);
 
-        int expected = 10;
-        int actual = cond.increaseVolume();
+        int expected = 9;
+        int actual = cond.decreaseVolume();
 
         assertEquals(expected, actual);
     }
