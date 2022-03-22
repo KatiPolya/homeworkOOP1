@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioIncreaseStationNextTest {
-    Radio cond = new Radio(9);
+    Radio cond = new Radio(10);
 
     @Test
     void increaseStationM1() {

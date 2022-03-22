@@ -2,6 +2,23 @@ public class Radio {
     private int currentVolume;
     private int minVolume = 0;
     private int maxVolume = 100;
+    private int currentStation;
+    private int minStation = 0;
+    private int maxStation = countMaxStation(10);
+    private int numberOfStation = 10;
+
+    public Radio(int numberOfStation) {
+        this.numberOfStation = numberOfStation;
+    }
+
+    public Radio() {
+    }
+
+
+    public int countMaxStation(int numberOfStation) {
+        maxStation = numberOfStation - 1;
+        return maxStation;
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -23,38 +40,18 @@ public class Radio {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume > maxVolume) {
-            return maxVolume;
-        }
-        if (currentVolume < minVolume) {
-            return minVolume;
-        }
         return currentVolume;
     }
 
     public int decreaseVolume() {
-        if (currentVolume <= maxVolume) {
-            currentVolume = currentVolume - 1;
-        }
-        if (currentVolume > maxVolume) {
-            return maxVolume;
-        }
+        currentVolume = currentVolume - 1;
+
         if (currentVolume < minVolume) {
             return minVolume;
         }
         return currentVolume;
     }
 
-    private int currentStation;
-    private int minStation = 0;
-    private int maxStation = 9;
-
-    public Radio(int maxStation) {
-        this.maxStation = maxStation;
-    }
-
-    public Radio() {
-    }
 
     public int getCurrentStation() {
         return currentStation;
@@ -75,29 +72,16 @@ public class Radio {
         if (currentStation == maxStation) {
             return minStation;
         }
-        if (currentStation > maxStation) {
-            currentStation = minStation;
-        }
-
-        if (currentStation < maxStation) {
-            currentStation = currentStation + 1;
-        }
+        currentStation = currentStation + 1;
 
         return currentStation;
     }
 
     public int decreaseStation() {
-        if (currentStation > maxStation) {
-            currentStation = minStation;
-        }
-
         if (currentStation == minStation) {
             return maxStation;
         }
-
-        if (currentStation <= maxStation) {
-            currentStation = currentStation - 1;
-        }
+        currentStation = currentStation - 1;
 
         return currentStation;
     }
