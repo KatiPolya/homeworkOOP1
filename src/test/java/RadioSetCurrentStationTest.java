@@ -3,14 +3,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioSetCurrentStationTest {
-    Radio cond = new Radio(10);
+    Radio cond = new Radio(20);
 
     @Test
     void setCurrentStation() {
 
-        cond.setCurrentStation(-1);
+        cond.setCurrentStation(15);
 
-        int expected = 0;
+        int expected = 15;
         int actual = cond.getCurrentStation();
 
         assertEquals(expected, actual);
@@ -61,9 +61,9 @@ class RadioSetCurrentStationTest {
     }
 
     @Test
-    void setCurrentStation10() {
+    void setCurrentStation20() {
 
-        cond.setCurrentStation(10);
+        cond.setCurrentStation(20);
 
         int expected = 0;
         int actual = cond.getCurrentStation();
